@@ -6,59 +6,38 @@ use Illuminate\Http\Request;
 
 class MajorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+     public function index()
     {
-        return 'ini adalah halaman daftar jurusan';
+        return "Ini adalah halaman daftar jurusan";
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-         return 'ini adalah halaman tambah jurusan';
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        return 'Melakukan penmabahan data jurusan baru';
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        Return 'Menampilkan detail jurusan dengan ID: {$id}';
+        return "Menampilkan detail jurusan dengan ID : {$id}";
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    public function create()
+    {
+        return "Menampilkan halaman untuk tambah data jurusan";
+    }
+
     public function edit(string $id)
     {
-        Return 'Ini adalah halaman edit jurusan dengan ID: {$id}';
+        return "Menampilkan halaman edit jurusan";
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    public function store(Request $request)
+    {
+        return "Melakukan penambahan data jurusan baru";
+    }
+
     public function update(Request $request, string $id)
     {
-        return 'Mengubah data siswa dengan ID: {$id}';
+        return "Melakukan perubahan data jurusan";
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
-         return 'Menghapus data jurusan dengan ID: {$id}';
+        return "Menghapus data jurusan";
     }
 }
