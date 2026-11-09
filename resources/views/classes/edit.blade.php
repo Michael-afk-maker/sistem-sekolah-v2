@@ -23,8 +23,12 @@
     <div>
         <label for="grade"
             class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
-        <input type="text" id="grade" name="grade" value="XII"
+        <select id="grade" name="grade"
             class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+            <option value="X" {{ old('grade', 'XII') == 'X' ? 'selected' : '' }}>X</option>
+            <option value="XI" {{ old('grade', 'XII') == 'XI' ? 'selected' : '' }}>XI</option>
+            <option value="XII" {{ old('grade', 'XII') == 'XII' ? 'selected' : '' }}>XII</option>
+        </select>
     </div>
 
     <div>
@@ -45,7 +49,7 @@
             class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali Kelas</label>
         <select id="teacher_id" name="teacher_id"
             class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
-            @foreach($teachers as $teacher )
+            @foreach($teachers as $teacher)
             <option value="{{ $teacher['id'] }}">
                 {{ $teacher['name'] }}
             </option>
